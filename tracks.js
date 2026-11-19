@@ -52,12 +52,12 @@
     return createTrack(id, undefined);
   };
 
-  tracks.all = async function() {
+  tracks.load = async function() {
     let count = 0;
     let read = 0;
     let result = [];
     for (let page = 1;; page++) {
-      let response = await fetch(`juice.json`);
+      let response = await fetch(`https://raw.githubusercontent.com/ReinaStreufert/juicerank/refs/heads/main/juice.json`);
       if (!response.ok) {
         return null;
       }
